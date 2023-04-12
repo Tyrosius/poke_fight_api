@@ -15,6 +15,8 @@ app.use('/pokemon',pokeRouter);
 
 app.get('/', (req,res)=>{
     res.send('Willkommen im Pokeland!')
-})
+});
+
+app.use('*', (req, res) => res.sendStatus(404));
 
 module.exports=app
