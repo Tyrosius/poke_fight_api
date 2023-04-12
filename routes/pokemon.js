@@ -1,5 +1,5 @@
 const {Router}=require('express');
-const{getPokemonList,getPokemonById} =require('../controller/pokemon')
+const{getPokemonList,getPokemonById} =require('../controller/pokemon.js')
 
 const pokeRouter = Router();
 
