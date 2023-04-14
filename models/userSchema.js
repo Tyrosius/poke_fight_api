@@ -1,13 +1,13 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const {Schema,model} = mongoose;
 
 const userSchema = new Schema({
   username: {type: String, required: [true,'Username is required']},
   email: {type: String, required: [true,'E-Mail is required']},
-  battlecount: 0,
-  score: 0,
-  deck: [0,1,2,3,4,5],
   password: {type: String, required: [true,'Password is required'],select:false},
+  battlecount: {type:Number,default:0},
+  score: {type:Number,default:0},
+  deck: {type: Array},
 })
 
-module.exports = mongoose.model("User", userSchema);
+module.exports = model("User", userSchema);
