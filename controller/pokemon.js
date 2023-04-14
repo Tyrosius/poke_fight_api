@@ -32,9 +32,9 @@ const getPokemonById=async(req,res)=>{
         pokemon.pic=pic;
 
         const type=[];
-        type.push(pokemonData.data.types[0].type.name);
-        type.push(pokemonData.data.types[1].type.name);
-
+        pokemonData.data.types.map((dbType)=>{
+            type.push(dbType.type.name)
+            });
         pokemon.type=type;
 
         res.json(pokemon)
