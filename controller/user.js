@@ -7,8 +7,12 @@ const users=await User.find()
 res.json(users)
 });
 
-const createUser=asyncHandler(async(req,res)=>{/* bereits vorhanden? */
+const createUser=asyncHandler(async(req,res)=>{
     const {email, username, password}=req.body;
+    const foundEmail = await User.findOne({ email });
+    if (foundEmail) throw new Error('User already exists', 400);
+    const foundName = await User.findOne({ email });
+    if (foundName) throw new Error('User already exists', 400);
     const hash=await hashPassword(password);
     const userCreate = await User.create({username:username,email:email,password:hash
     });
@@ -36,9 +40,11 @@ const getUserById=asyncHandler(async(req, res) => {
 
     res.status(201).json(user);
 });
-const updateUserById=(req,res)=>{
-/* TODO  */
-};
+
+const updateUserGAmeStatsById=asyncHandler(async(req,res)=>{
+const { userId}=req;
+res.send('not implemented yet');
+});
 const deleteUserById=(req,res)=>{
 /* TODO */
 };
