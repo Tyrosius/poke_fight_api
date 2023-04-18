@@ -36,35 +36,6 @@ function handleChange(event) {
 console.log("Login: userStatus", userIsLogged);
 
 return (
-    <div>
-        {userIsLogged ? (
-            <section>
-                {<h1> Sie sind eingeloggt</h1>}
-                <Home />
-            </section>
-        ) : (
-            <div>
-                <div className="login-container">
-                    <form onSubmit={onsubmit}>
-                        <input
-                            className="input-field"
-                            type="text"
-                            name="email"
-                            placeholder="Deine E-Mail"
-                            onChange={handleChange}
-                        />
-                        <input
-                            className="input-field"
-                            type="password"
-                            name="password"
-                            placeholder="Dein Passwort"
-                            onChange={handleChange}
-                        />
-                        <button className="login-button">Login</button>
-                    </form>
-                </div>
-            </div>
-        )}
-    </div>
+   
 );
 }
