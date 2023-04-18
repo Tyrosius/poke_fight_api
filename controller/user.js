@@ -41,7 +41,7 @@ const getUserById=asyncHandler(async(req, res) => {
     res.status(201).json(user);
 });
 
-const updateUserGAmeStatsById=asyncHandler(async(req,res)=>{
+const updateUserById=asyncHandler(async(req,res)=>{
 const { userId}=req;
 res.send('not implemented yet');
 });

@@ -1,2 +1,0 @@
-const getToken=()=>{};
-const setToken=()=>{};

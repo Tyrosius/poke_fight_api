@@ -7,7 +7,7 @@ const userRouter = Router();
 userRouter.get('/',getAllUser);/* für highscore */
 userRouter.post('/signup',createUser);
 userRouter.post('/login',checkUser);
-userRouter.get('/:id',verifyToken,getUserById);/* für auth */
+userRouter.get('/me',verifyToken,getUserById);/* für auth */
 userRouter.put('/:id',verifyToken,updateUserById);/* nur auth, für deck-speichern, score und battlecount erhöhen */
 userRouter.delete('/:id',verifyToken,deleteUserById);/* nur auth */
 
