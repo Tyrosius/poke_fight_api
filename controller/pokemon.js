@@ -35,6 +35,7 @@ const getPokemonById=async(req,res)=>{
         pokemonData.data.types.map((dbType)=>{
             type.push(dbType.type.name)
             });
+
         pokemon.type=type;
 
         res.json(pokemon)
