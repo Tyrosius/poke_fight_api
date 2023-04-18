@@ -10,9 +10,9 @@ res.json(users)
 const createUser=asyncHandler(async(req,res)=>{
     const {email, username, password}=req.body;
     const foundEmail = await User.findOne({ email });
-    if (foundEmail) throw new Error('User already exists', 400);
+    if (foundEmail) throw new ErrorResponse('User already exists', 400);
     const foundName = await User.findOne({ email });
-    if (foundName) throw new Error('User already exists', 400);
+    if (foundName) throw new ErrorResponse('User already exists', 400);
     const hash=await hashPassword(password);
     const userCreate = await User.create({username:username,email:email,password:hash
     });
